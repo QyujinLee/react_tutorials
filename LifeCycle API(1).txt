@@ -1,0 +1,35 @@
+﻿* LifeCycle API
+
+(LifeCycleAPI.PNG 참고)
+
+- 컴포넌트가 나타날 때 / 업데이트 될 때 / 사라질 때 중간중간 작업을 하고 싶다! 면 LifeCycle API를 사용한다.
+- Mounting : 컴포넌트가 브라우저 상에 나타난다
+  Updating : 컴포넌트의 Props 또는 State가 변경 시 
+  Unmounting : 컴포넌트가 브라우저에서 사라진다
+
+<Mounting>
+- constructor
+: 컴포넌트가 만들어지는 과정에서의 초기 설정을 담당하는 함수
+- getDerivedStateFromProps
+: Props로 받은 값을 그대로 동결시키고 싶을 시 함수 실행
+- componentDidMount
+: 외부 라이브러리를 사용 시 특정 DOM에 그려달라는 요청 또는 Ajax 요청을 해당 함수에 구현,
+  컴포넌트가 브라우저에 나타난 시점에 행할 일들을 구현,
+
+<Updating>
+- shouldComponentUpdate
+: 컴포넌트가 업데이트가 되는 성능을 최적화 시키고 싶을 시 사용하는 함수,
+  VirtualDOM에 그리는 작업 마저 최적화 할 시
+  boolean값을 반환하여 후의 렌더링을 할 지 안할 지에 대해서도 결정하는 함수
+- getSnapshotBeforeUpdate
+: 브라우저 상에 반영되기 바로 직전에 호출되는 함수
+  렌더링한 후에 DOM의 크기라던가 등등의 요소를 가져올 때 쓰는 함수
+-componentDidUpdate
+: 이전 상태와 비교하여 작업할 일을 변경 시의 사용되는 함수
+
+<Unmounting>
+- componentWillUnmount
+: 컴포넌트가 사라지는 과정에서 호출되는 함수 
+  mounting과 updating 과정에서 설정해 놓은 리스너를 해제하는 함수
+
+
