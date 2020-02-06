@@ -5,44 +5,14 @@ import MyName from './MyName';
 
   class App extends Component {
     render() {
-      // const style = {
-      //   // css에서는 'background-color'라고 썼지만 JSX로는 카멜케이스 적용
-      //   backgroundColor: 'black',
-      //   padding: '16px',
-      //   color: 'white',
-      //   fontSize: '20px'
-      // };
-
-      return(
-        <Fragment>
-          {/* 변수의 실제 값은 {변수명} 으로 표현 */}
-          <div className="App">
-            hi there
-          </div>
-        </Fragment>
-      );
+      /* 
+        MyName이라는 컴포넌트를 불러오고,
+        그 컴포넌트 내에서 props를 호출한다면 
+        자식 컴포넌트에 선언된 같은 이름의 props를 가져다 쓴다.
+        기본값도 설정 가능
+      */
+      return <MyName/>;
     }
   }
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//           Edit <code>src/App.js</code> and save to reload.
-//         </p>
-//         <a
-//           className="App-link"
-//           href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//         >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//   );
-// }
 
 export default App;
