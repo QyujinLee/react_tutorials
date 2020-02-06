@@ -53,6 +53,12 @@ class Counter extends Component {
             <div>
                 <h1>카운터</h1>
                 <div>값 : {this.state.number}</div>
+                {/* 
+                   이벤트 이름은 꼭 카멜케이스로 작성 ! ex) onClick
+                   이벤트에 전달해주는 값은 꼭 함수! 함수호출로 하면 안됨!
+                   ex) onClick={this.handleIncrease()} --> 이렇게 하면
+                   해당 함수가 렌더링 시에 무한으로 호출됨
+                */}
                 <button onClick={this.handleIncrease}>+</button>
                 <button onClick={this.handleDecrease}>-</button>
             </div>
