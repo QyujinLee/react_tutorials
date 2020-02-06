@@ -5,51 +5,20 @@ import MyName from './MyName';
 
   class App extends Component {
     render() {
-      const name = "gyujin";
-      const num = 1;
+      // const style = {
+      //   // css에서는 'background-color'라고 썼지만 JSX로는 카멜케이스 적용
+      //   backgroundColor: 'black',
+      //   padding: '16px',
+      //   color: 'white',
+      //   fontSize: '20px'
+      // };
+
       return(
         <Fragment>
-          <div>
-            {
-              1+1 == 2 ? "correct" : "incorrect"
-            }
+          {/* 변수의 실제 값은 {변수명} 으로 표현 */}
+          <div className="App">
+            hi there
           </div>
-          <div>
-            {
-              // true가 아니라면 아무 값도 표시 하지 않는 && 연산자 
-              name === "gyujin" && <div>correct</div>
-            }
-          </div>
-
-          {/*
-            cf) 주석 처리 시 주석 기호를 {}안에 넣어 표기
-          */}
-
-          {/* IIFE(즉시실행함수표현)*/}
-          <div>
-            {
-              (function() {
-                if(num === 2) {
-                  return <div>correct</div>
-                } else {
-                  return <div>incorrect</div>
-                }
-              })()
-            }
-          </div>
-
-          <div>
-            { // 화살표 함수
-              (() => { // this, arguments, super 등의 개념이 없음
-                if(num === 1) {
-                  return <div>correct</div>
-                } else {
-                  return <div>incorrect</div>
-                }
-              })()
-            }
-          </div>
-
         </Fragment>
       );
     }
