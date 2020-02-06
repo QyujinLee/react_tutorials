@@ -14,7 +14,7 @@ MyName.defaultProps = {
 
 // 함수형 컴포넌트는 lifeCycle과 state의 기능이 없음
 // 그러나 초기 마운트 속도가 조금 빠름
-// 값을 가져와서 보여주기만 하는 용도 일때 용이한 함수형 컴포넌트
+// 값을 가져와서 보여주기만 하는 용도 일때 용이한 함수형 컴포넌트 
 
 // 클래스형 컴포넌트
 // class MyName extends Component {
