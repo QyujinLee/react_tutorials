@@ -11,7 +11,7 @@
 - constructor
 : 컴포넌트가 만들어지는 과정에서의 초기 설정을 담당하는 함수
 - getDerivedStateFromProps
-: Props로 받은 값을 그대로 동결시키고 싶을 시 함수 실행
+: Props로 받은 값을 그대로 동결시키고 싶을 시 함수 실행 (props 값을 state와 동기화하고 싶을 때 사용)
 - componentDidMount
 : 외부 라이브러리를 사용 시 특정 DOM에 그려달라는 요청 또는 Ajax 요청을 해당 함수에 구현,
   컴포넌트가 브라우저에 나타난 시점에 행할 일들을 구현,
