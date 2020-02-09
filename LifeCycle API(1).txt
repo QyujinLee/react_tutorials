@@ -32,4 +32,9 @@
 : 컴포넌트가 사라지는 과정에서 호출되는 함수 
   mounting과 updating 과정에서 설정해 놓은 리스너를 해제하는 함수
 
+<컴포넌트에 에러가 났을 시>
+- componentDidCatch
+: 에러가 날 수 있는 컴포넌트의 '부모' 컴포넌트에서 try catch문 처럼 사용
+  해당 함수내에서 error 값을 잡아 state를 변경하고 
+  render함수 내에서 if문으로 this.state.error 값을 잡아 에러 났을 시의 화면을 처리
 
