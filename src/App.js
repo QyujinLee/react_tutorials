@@ -22,16 +22,15 @@ import PhoneInfoList from './components/PhoneInfoList';
           ...data,
           id: this.id++
         })
-      })
-      // 아래 방법으로도 위와 같은 결과 동일하게 수행가능
-      // this.setState({
-      //   information : information.concat(Object.assign(
-      //     {}, 
-      //     data,
-      //     {id: this.id++}
-      //   ))
-      // })
+      });
     }
+
+    handleRemove = (id => {
+      const {information} = this.state;
+      this.setState({
+        information: information.filter(info => info.id !== id)
+      })
+    })
 
     render() { 
       return (
@@ -40,7 +39,10 @@ import PhoneInfoList from './components/PhoneInfoList';
           <PhoneForm
             onCreate={this.handleCreate}
           />
-          <PhoneInfoList data={this.state.information}/>
+          <PhoneInfoList 
+            data={this.state.information}
+            onRemove = {this.handleRemove}
+          />
         </div>   
       );
     }
