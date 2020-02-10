@@ -6,10 +6,26 @@ import PhoneInfoList from './components/PhoneInfoList';
   class App extends Component {
 
     // 렌더링과 관련 없기에 state에 추가하지 않았음
-    id = 0;
+    id = 3;
 
     state = {
-      information : [],
+      information : [
+        {
+          id: 0,
+          name: "홍길동",
+          phone: "010-0000-0001"
+        },
+        {
+          id: 1,
+          name: "김민준",
+          phone: "010-0000-0002"
+        },
+        {
+          id: 2,
+          name: "공여정",
+          phone: "010-0000-0003"
+        }
+      ],
     }
 
     handleCreate = (data) => {
@@ -41,9 +57,9 @@ import PhoneInfoList from './components/PhoneInfoList';
               return {
                 id,
                 ...data
-              };
+              }
             }
-            return info;
+            return info
           }
         )
       })

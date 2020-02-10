@@ -8,6 +8,15 @@ class PhoneInfo extends Component {
         phone: ''
     }
 
+    // 업데이트가 일어났을 시 모든 컴포넌트를 업데이트 하지 않고 
+    // 필요한 부분만 렌더링
+    shouldComponentUpdate(nextProps, nextState) {
+        if(this.state !== nextState) {
+            return true;
+        }        
+        return this.props.info !== nextProps.info;
+    }
+
     // 수정모드 flag
     handleToggleEdit = () => {
         //true -> false
@@ -51,6 +60,9 @@ class PhoneInfo extends Component {
             padding: '8px',
             margin: '8px'
         }
+
+        console.log("name : " + name);
+
         return (
             <div style={style}>
                 {
