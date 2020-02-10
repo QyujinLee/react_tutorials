@@ -26,6 +26,14 @@ import PhoneInfoList from './components/PhoneInfoList';
           phone: "010-0000-0003"
         }
       ],
+      keyword: ''
+    }
+
+    // 키워드로 전화번호 찾기 위한 이벤트
+    handleChange = (e) => {
+      this.setState({
+        keyword: e.target.value,
+      })
     }
 
     handleCreate = (data) => {
@@ -73,8 +81,15 @@ import PhoneInfoList from './components/PhoneInfoList';
           <PhoneForm
             onCreate={this.handleCreate}
           />
+          <input 
+            value={this.state.keyword}
+            onChange={this.handleChange}
+            placeholder="검색..."
+          />
           <PhoneInfoList 
-            data={this.state.information}
+            data={this.state.information.filter(
+              info => info.name.indexOf(this.state.keyword) > -1
+            )}
             onRemove = {this.handleRemove}
             onUpdate = {this.handleUpdate}
           />
