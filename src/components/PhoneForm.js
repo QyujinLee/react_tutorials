@@ -1,6 +1,10 @@
 import React , { Component } from 'react';
 
 class PhoneForm extends Component {
+    // v16.3 이후 부터 DOM에 직접 접근을 위한 선언
+    // 차트 관련 외부 라이브러리 사용 시 ref 필요
+    input = React.createRef();
+
     state = {
         name : '',
         phone : ''
@@ -21,7 +25,8 @@ class PhoneForm extends Component {
         this.setState({
           name: '',
           phone: ''
-        })
+        });
+        this.input.current.focus();
       }
 
     render() {
@@ -32,6 +37,7 @@ class PhoneForm extends Component {
                     value={this.state.name}
                     onChange={this.handleChange}
                     name="name"
+                    ref={this.input}
                 />
                 <input
                     placeholder="전화번호"
